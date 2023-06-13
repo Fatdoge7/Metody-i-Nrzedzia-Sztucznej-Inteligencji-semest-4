@@ -1,2 +1,2 @@
-Metody-i-Nrzedzia-Sztucznej-Inteligencji-semest-4
-Projekt semestralny
+# Metody-i-Nrzedzia-Sztucznej-Inteligencji-semest-4
+# Projekt semestralny
