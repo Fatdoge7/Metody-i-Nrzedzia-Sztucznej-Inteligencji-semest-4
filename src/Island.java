@@ -12,7 +12,7 @@ public class Island {
     public int numIslands;
     public int islandSize;
     public int numVariablesInFunction;
-    private int EV = 1000;
+    private int EV = 10000;
     private Population[] island;
 
     public Island(int numIslands, int islandSize, int numVariablesInFunction, int numExecutions) {

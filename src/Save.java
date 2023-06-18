@@ -40,11 +40,11 @@ public class Save {
                 }
 
                 for (int j = 1; j < data.length; j += 3) {
-                    bestRecord += String.valueOf(data[j]) + ":;";
+                    bestRecord += String.valueOf(data[j]) + ";";
                 }
 
                 for (int j = 2; j < data.length; j += 3) {
-                    globalRecord += String.valueOf(data[j]) + ":;";
+                    globalRecord += String.valueOf(data[j]) + ";";
                 }
 
                 currentFileWriter.write(currentRecord + "\n");
