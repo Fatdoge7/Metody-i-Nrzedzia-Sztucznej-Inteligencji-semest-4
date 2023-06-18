@@ -12,7 +12,7 @@ public class Island {
     public int numIslands;
     public int islandSize;
     public int numVariablesInFunction;
-    private int EV = 10000;
+    private int EV = 1000;
     private Population[] island;
 
     public Island(int numIslands, int islandSize, int numVariablesInFunction, int numExecutions) {
@@ -25,7 +25,7 @@ public class Island {
 
     public double[] start() {
         double[] bestFitness = new double[numIslands];
-        double[] record = new double[((EV / 50)+1) * 3];
+        double[] record = new double[(EV+1) * 3];
         int recordIndex = 0;
 
         for (int i = 0; i < numIslands; i++) {
@@ -45,12 +45,10 @@ public class Island {
                 currentValue = currentPopulation.evolve();
                 currentAverage += currentValue[0];
 
-                if (Generations % 50 == 0) {
 
                     if (bestFitness[IslandIndex] > currentValue[1]) {
                         bestFitness[IslandIndex] = currentValue[1];
                     }
-                }
             }
             currentAverage /= numIslands;
 
@@ -58,7 +56,7 @@ public class Island {
                 migrate();
             }
 
-            if (Generations % 50 == 0) {
+
                 if (globalBest > findGlobalBestFitness()) {
                     globalBest = findGlobalBestFitness();
                 }
@@ -68,7 +66,7 @@ public class Island {
                 record[recordIndex + 1] = bestAverage;
                 record[recordIndex + 2] = globalBest;
                 recordIndex += 3;
-            }
+
         }
         return record;
     }

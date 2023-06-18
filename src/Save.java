@@ -21,6 +21,8 @@ public class Save {
 
 
     public static void saveData(int numExecutions, Island civilization) {
+        Timer timer = new Timer();
+        timer.start();
         for (int i = 1; i <= numExecutions; i++) {
             double[] data;
             String record = "";
@@ -54,7 +56,11 @@ public class Save {
             } catch (IOException error) {
                 error.printStackTrace();
             }
+            System.out.println("Test No: " + i);
+            timer.checkTimer();
         }
         System.out.println("Completed");
+        timer.checkTimer();
+        timer.stop();
     }
 }
